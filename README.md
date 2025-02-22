@@ -79,6 +79,8 @@ Contributions are welcome! To contribute:
 
 Please ensure your code follows the existing style and includes appropriate tests.
 
+[![Built with Dokugen](https://img.shields.io/badge/Built%20with-Dokugen-brightgreen)](https://github.com/samueltuoyo15/Dokugen)
+
 ## License
 
 This project is under the ISC License.
