@@ -29,3 +29,6 @@ console.log("Slice and take only some bytes", bufferFromString.slice(0, 3))
 // concat buffers 
 const concatBuff = Buffer.concat([buffOne, bufferFromString])
 console.log(concatBuff)
+
+// convert to JSON
+console.log("JSON presentation of the concated buffers", concatBuff.toJSON())
