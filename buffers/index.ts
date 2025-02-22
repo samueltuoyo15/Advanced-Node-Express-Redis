@@ -30,9 +30,9 @@ console.log("Writing a string to the buffOne variable:", buffOne.toString())
 
 // u can specify encoding type as a second argument 
 const hexBuff = Buffer.from("Hello", "utf-8") // supports base64 e.t.c
-console.log(hexBuff.toString("hex")) // Converts to hex toString
+console.log("utf8 encoding of a string", hexBuff.toString("hex")) // Converts to hex toString
 
-// i can copy contents of a buffer to another
+// u can copy contents of a buffer to another
 const buffA = Buffer.from("Hello")
 const buffB = Buffer.alloc(buffA.length)
 buffA.copy(buffB)
