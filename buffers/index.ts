@@ -25,3 +25,7 @@ console.log("Writing a string to the buffOne variable:", buffOne.toString())
 // some cool stuff u can also do 
 console.log("Get first byte of the string buffer", bufferFromString[0])
 console.log("Slice and take only some bytes", bufferFromString.slice(0, 3))
+
+// concat buffers 
+const concatBuff = Buffer.concat([buffOne, bufferFromString])
+console.log(concatBuff)
