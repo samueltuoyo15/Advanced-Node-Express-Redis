@@ -16,4 +16,12 @@ import crypto from "crypto"
 import zlib from "zlip" //inbuilt nodejs module that enables compression 
 import { Transform } from "stream" // stream module now we are using the Transform 
 
-class EncryptStream extends Transform
+class EncryptStream extends Transform{
+  constructor(key, vector){
+    super()
+    this.key = key
+    this.vector = vector
+  }
+  
+  __transform(chunk, encoding, callback)
+}
