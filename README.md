@@ -1,86 +1,92 @@
 # Advanced Node.js Concepts
 
-This project explores advanced Node.js concepts, including Buffers, the Event Loop, Streams, and Express.js fundamentals. Each concept is implemented in a separate module to provide a clear and focused understanding.
+This project explores advanced concepts in Node.js, including buffers, the event loop, streams, and advanced CORS configurations in Express.
 
 ## Installation
 
-To get started, clone the repository and install the necessary dependencies for each module.
+To get started with this project, follow these steps:
 
-```bash
-git clone <repository-url>
-cd <project-directory>
-cd buffers
-npm install
-cd ../event-loop
-npm install
-cd ../streams
-npm install
-cd ../express-concepts
-npm install
-cd ..
-```
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
+
+2.  Install the dependencies for each module:
+
+    ```bash
+    cd buffers
+    npm install
+    cd ../event-loop
+    npm install
+    cd ../streams
+    npm install
+    cd ../express-concepts/advanced-cors
+    npm install
+    cd ../../..
+    ```
 
 ## Usage
 
-Each module can be run independently using `ts-node` or by compiling the TypeScript code to JavaScript and running with Node.js.
+Each module in this project demonstrates a specific concept. Here’s how you can run each one:
 
 ### Buffers
 
-Buffers are used to handle raw binary data.
+Navigate to the `buffers` directory and run:
 
 ```bash
 cd buffers
-npm run dev # or node index.js after compiling
+npm run dev
 ```
 
-This will execute the `index.ts` file, demonstrating buffer creation, writing, and manipulation.
+This will execute the `index.ts` file, showcasing the use of buffers for handling binary data.
 
 ### Event Loop
 
-Understanding the event loop is crucial for writing efficient asynchronous code.
+Navigate to the `event-loop` directory and run:
 
 ```bash
 cd event-loop
-npm run dev # or node index.js after compiling
+npm run dev
 ```
 
-This will show the execution order of tasks in the event loop, including microtasks and macrotasks.
+This will execute the `index.ts` file, demonstrating the Node.js event loop's behavior and execution order.
 
 ### Streams
 
-Streams allow for efficient reading and writing of data in chunks.
+Navigate to the `streams` directory and run:
 
 ```bash
 cd streams
-npm run dev # or node index.js after compiling
+npm run dev
 ```
 
-This will demonstrate reading a file, compressing it with Gzip, encrypting it, and writing the output to another file.
+This will execute the `index.ts` file, showcasing the use of streams for efficient data processing, compression, and encryption.
 
-### Express Concepts
+### Express CORS
 
-This module covers the basics of building web applications with Express.js.
+Navigate to the `express-concepts/advanced-cors` directory and run:
 
 ```bash
-cd express-concepts
-npm run dev # or node index.js after compiling
+cd express-concepts/advanced-cors
+npm run dev
 ```
 
-**NOTE:** the express-concepts project does not have any logic, it needs to be implemented for it to actually run.
+This will start an Express server that demonstrates advanced CORS (Cross-Origin Resource Sharing) configuration.
 
-## Contribution
+## Contributing
 
-Contributions are welcome! To contribute:
+Contributions are welcome! If you find any issues or have suggestions for improvements, please submit a pull request.
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
-3.  Implement your changes.
-4.  Submit a pull request.
-
-Please ensure your code follows the existing style and includes appropriate tests.
-
-[![Built with Dokugen](https://img.shields.io/badge/Built%20with-Dokugen-brightgreen)](https://github.com/samueltuoyo15/Dokugen)
+3.  Commit your changes with clear and descriptive messages.
+4.  Push your branch to your forked repository.
+5.  Submit a pull request.
 
 ## License
 
-This project is under the ISC License.
+This project is under the ISC license.
+
+[![Built with Dokugen](https://img.shields.io/badge/Built%20with-Dokugen-brightgreen)](https://github.com/samueltuoyo15/Dokugen)
