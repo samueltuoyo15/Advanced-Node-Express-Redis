@@ -10,6 +10,14 @@ const corsConfig = () => {
       } else{
         callback(new Error("Sorry your origin is whitelisted from using our api"))
       }
-    }
+    },
+    methods: ["GET", "PUT", "POST", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization", "Accept-Version"],
+    exposedHeaders: ["X-Total-Count", "Content-Range"],
+    credentials: true,
+    preflightContinue: false,
+    maxAge: 600,
+    optionSuccessStatus: 204
   })
 }
+
