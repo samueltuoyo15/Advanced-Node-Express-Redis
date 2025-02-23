@@ -1,5 +1,5 @@
 import express from "express" 
-import { corsConfig } from "./config/corsConfig"
+import { corsConfig } from "./config/corsConfig.ts"
 
 const app = express()
 app.use(corsConfig())
