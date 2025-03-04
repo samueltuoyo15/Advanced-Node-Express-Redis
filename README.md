@@ -1,19 +1,23 @@
-# Advanced Node.js Concepts
+# Advanced Node.js Concepts 🚀
 
-This project explores advanced concepts in Node.js, including buffers, the event loop, streams, and advanced CORS configurations in Express.
+## Description
+
+This project explores advanced Node.js concepts, including Buffers, the Event Loop, and Streams. It provides practical examples and demonstrations of these core features, helping you understand how to build efficient and robust Node.js applications.
 
 ## Installation
 
-To get started with this project, follow these steps:
+To set up the project locally, follow these steps:
 
-1.  Clone the repository:
+1.  **Clone the repository:**
 
     ```bash
     git clone <repository_url>
-    cd <repository_directory>
+    cd advanced-nodejs
     ```
 
-2.  Install the dependencies for each module:
+2.  **Install dependencies:**
+
+    Navigate to each module (`buffers`, `event-loop`, `streams`) and run:
 
     ```bash
     cd buffers
@@ -22,71 +26,114 @@ To get started with this project, follow these steps:
     npm install
     cd ../streams
     npm install
-    cd ../express-concepts/advanced-cors
-    npm install
-    cd ../../..
+    cd ..
+    ```
+
+3.  **Run the examples:**
+
+    To run the examples in each module, use the following commands:
+
+    ```bash
+    cd buffers
+    npm run dev
+    cd ../event-loop
+    npm run dev
+    cd ../streams
+    npm run dev
+    cd ..
     ```
 
 ## Usage
 
-Each module in this project demonstrates a specific concept. Here’s how you can run each one:
-
 ### Buffers
 
-Navigate to the `buffers` directory and run:
+The `buffers` module demonstrates how to create, manipulate, and use Buffers in Node.js. Buffers are essential for handling binary data, such as file system operations, cryptography, and image processing.
 
-```bash
-cd buffers
-npm run dev
+```typescript
+import { Buffer } from 'node:buffer';
+
+// Creating a buffer
+const buffer = Buffer.alloc(10);
+console.log(buffer); // Output: <Buffer 00 00 00 00 00 00 00 00 00 00>
+
+// Writing to a buffer
+buffer.write("Hello");
+console.log(buffer.toString()); // Output: Hello
 ```
-
-This will execute the `index.ts` file, showcasing the use of buffers for handling binary data.
 
 ### Event Loop
 
-Navigate to the `event-loop` directory and run:
+The `event-loop` module illustrates how the Node.js event loop handles asynchronous tasks. It explains the differences between microtasks and macrotasks and demonstrates the execution order of various asynchronous operations.
 
-```bash
-cd event-loop
-npm run dev
+```typescript
+console.log("1. Script has started");
+
+setTimeout(() => {
+  console.log("2. setTimeout callback");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("3. Promise resolved");
+});
+
+console.log("4. Script has ended");
 ```
-
-This will execute the `index.ts` file, demonstrating the Node.js event loop's behavior and execution order.
 
 ### Streams
 
-Navigate to the `streams` directory and run:
+The `streams` module provides a practical example of using streams to read, compress, encrypt, and write data efficiently. It includes a custom `EncryptStream` class that transforms data while streaming.
 
-```bash
-cd streams
-npm run dev
+```typescript
+import fs from "fs";
+import crypto from "crypto";
+import zlib from "zlib";
+import { Transform } from "stream";
+
+// Create a readable stream
+const readableStream = fs.createReadStream("./test_files/file.txt");
+
+// Create a gzip stream
+const gzipStream = zlib.createGzip();
+
+// Create a writeable stream
+const writeableStream = fs.createWriteStream("./test_files/output.txt.gzip");
+
+// Pipe the streams
+readableStream.pipe(gzipStream).pipe(writeableStream);
 ```
 
-This will execute the `index.ts` file, showcasing the use of streams for efficient data processing, compression, and encryption.
+## Features
 
-### Express CORS
+*   **Buffers**: Demonstrates the creation, manipulation, and usage of Buffers for handling binary data.
+*   **Event Loop**: Explains the event loop phases and the execution order of asynchronous tasks.
+*   **Streams**: Implements readable, writable, duplex, and transform streams for efficient data processing.
+*   **Encryption**: Shows how to encrypt data using streams and the `crypto` module.
+*   **Compression**: Demonstrates data compression using streams and the `zlib` module.
 
-Navigate to the `express-concepts/advanced-cors` directory and run:
+## Technologies Used
 
-```bash
-cd express-concepts/advanced-cors
-npm run dev
-```
-
-This will start an Express server that demonstrates advanced CORS (Cross-Origin Resource Sharing) configuration.
+| Technology   | Description                                                              |
+| :----------- | :----------------------------------------------------------------------- |
+| Node.js      | JavaScript runtime environment                                           |
+| TypeScript   | A typed superset of JavaScript that compiles to plain JavaScript.       |
+| npm          | Package manager for JavaScript                                           |
+| `fs` module  | File system module for reading and writing files.                      |
+| `crypto`     | Cryptography module for encryption and decryption operations.            |
+| `zlib`       | Compression and decompression module                                    |
+| `stream`     | Module for working with streaming data.                                |
+| nodemon      | Automatically restarts the node application when file changes are detected. |
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please submit a pull request.
+Contributions are welcome! Here’s how you can contribute:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
-3.  Commit your changes with clear and descriptive messages.
-4.  Push your branch to your forked repository.
-5.  Submit a pull request.
+3.  Make your changes and commit them with descriptive messages.
+4.  Submit a pull request.
 
 ## License
 
-This project is under the ISC license.
+This project is open-source and available under the [MIT License](LICENSE).
 
 [![Built with Dokugen](https://img.shields.io/badge/Built%20with-Dokugen-brightgreen)](https://github.com/samueltuoyo15/Dokugen)
